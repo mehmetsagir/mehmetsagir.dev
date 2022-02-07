@@ -28,7 +28,6 @@ export const navigations: NavigationsProps = [
         path: '/contact',
         label: 'Contact',
         icon: <Icon name="at" />,
-        disabled: true,
       },
       {
         path: '/bookmarks',
