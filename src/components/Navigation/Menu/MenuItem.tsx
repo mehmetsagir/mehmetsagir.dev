@@ -19,7 +19,6 @@ const MenuItem: React.FC<Props> = ({ data, setIsActiveLink, isActiveLink }) => {
       onMouseEnter={() => setIsActiveLink(path)}
       className={classNames({
         active: isActiveLink === path,
-        disabled,
       })}
     >
       <div className="icon">{icon}</div>
@@ -46,14 +45,11 @@ const Container = styled.a`
   transition: 200ms;
 
   
-  &:not(.disabled).active {
+  &.active {
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.textPrimary};
   }
-  
-  &.disabled {
-    opacity: 0.5;
-  }
+
   .icon {
     width: 18px;
     height: 18px;
