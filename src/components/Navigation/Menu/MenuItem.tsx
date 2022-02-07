@@ -30,7 +30,7 @@ const MenuItem: React.FC<Props> = ({ data, setIsActiveLink, isActiveLink }) => {
   return disabled ? (
     content
   ) : (
-    <Link href={path} {...data} passHref>
+    <Link href={path} {...data}>
       {content}
     </Link>
   );

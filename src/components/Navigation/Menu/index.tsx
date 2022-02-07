@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Icon from 'src/components/Icon';
 import styled from 'styled-components';
@@ -6,6 +7,7 @@ import ModalOverlay from './ModalOverlay';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
@@ -21,6 +23,10 @@ const Menu = () => {
       }
     });
   }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [router.pathname]);
 
   return (
     <>
