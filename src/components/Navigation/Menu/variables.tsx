@@ -13,27 +13,9 @@ export const navigations: NavigationsProps = [
         exact: true,
       },
       {
-        path: '/blog',
-        label: 'Blog',
-        icon: <Icon name="blog" />,
-        disabled: true,
-      },
-      {
-        path: '/photos',
-        label: 'Photos',
-        icon: <Icon name="photo" />,
-        disabled: true,
-      },
-      {
         path: '/contact',
         label: 'Contact',
         icon: <Icon name="at" />,
-      },
-      {
-        path: '/bookmarks',
-        label: 'Bookmarks',
-        icon: <Icon name="bookmarks" />,
-        disabled: true,
       },
     ],
   },

@@ -12,5 +12,4 @@ export type RouteProps = {
   label: string;
   icon: JSXElementConstructor;
   exact?: boolean;
-  disabled?: boolean;
 };

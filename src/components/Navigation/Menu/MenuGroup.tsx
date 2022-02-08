@@ -20,17 +20,14 @@ const MenuGroup: React.FC<Props> = ({ search }) => {
       {navigations.map((navigate, key) => (
         <React.StrictMode key={key}>
           <span className="title">{navigate.title}</span>
-          {navigate.routes.map(
-            (route, key) =>
-              !route.disabled && (
-                <MenuItem
-                  key={key}
-                  data={route}
-                  setIsActiveLink={setIsActiveLink}
-                  isActiveLink={isActiveLink}
-                />
-              )
-          )}
+          {navigate.routes.map((route, key) => (
+            <MenuItem
+              key={key}
+              data={route}
+              setIsActiveLink={setIsActiveLink}
+              isActiveLink={isActiveLink}
+            />
+          ))}
         </React.StrictMode>
       ))}
     </Container>
