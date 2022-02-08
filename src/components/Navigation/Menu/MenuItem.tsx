@@ -12,25 +12,19 @@ type Props = {
 } & HTMLAttributes<LinkProps>;
 
 const MenuItem: React.FC<Props> = ({ data, setIsActiveLink, isActiveLink }) => {
-  const { path, label, icon, disabled } = data;
+  const { path, label, icon } = data;
 
-  const content = (
-    <Container
-      onMouseEnter={() => setIsActiveLink(path)}
-      className={classNames({
-        active: isActiveLink === path,
-      })}
-    >
-      <div className="icon">{icon}</div>
-      {label}
-    </Container>
-  );
-
-  return disabled ? (
-    content
-  ) : (
+  return (
     <Link href={path} {...data}>
-      {content}
+      <Container
+        onMouseEnter={() => setIsActiveLink(path)}
+        className={classNames({
+          active: isActiveLink === path,
+        })}
+      >
+        <div className="icon">{icon}</div>
+        {label}
+      </Container>
     </Link>
   );
 };
