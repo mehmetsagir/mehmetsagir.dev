@@ -7,7 +7,7 @@ import ModalOverlay from './ModalOverlay';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const router = useRouter();
+  const router: any = useRouter();
 
   useEffect(() => {
     document.addEventListener('keydown', (e) => {
@@ -26,6 +26,9 @@ const Menu = () => {
 
   useEffect(() => {
     setIsOpen(false);
+    document.title = `${
+      router.components[router.pathname].Component.name
+    } | Mehmet Sağır`;
   }, [router.pathname]);
 
   return (
