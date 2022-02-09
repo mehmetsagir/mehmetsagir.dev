@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Title from 'src/components/Projects/Title';
+
 import Card from './Card';
 
 type GistsProps = {
@@ -21,8 +22,8 @@ const Gists = () => {
     <>
       <Title title="Gists" />
       {gists.length > 0 &&
-        gists.map((gist) => (
-          <Card title={gist.description} path={gist.html_url} />
+        gists.map((gist, index) => (
+          <Card key={index} title={gist.description} path={gist.html_url} />
         ))}
     </>
   );
