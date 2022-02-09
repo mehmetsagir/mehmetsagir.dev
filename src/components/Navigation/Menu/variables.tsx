@@ -13,14 +13,14 @@ export const navigations: NavigationsProps = [
         exact: true,
       },
       {
-        path: '/contact',
-        label: 'Contact',
-        icon: <Icon name="at" />,
-      },
-      {
         path: '/projects',
         label: 'Projects',
         icon: <Icon name="projects" />,
+      },
+      {
+        path: '/contact',
+        label: 'Contact',
+        icon: <Icon name="at" />,
       },
     ],
   },
