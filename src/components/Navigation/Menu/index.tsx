@@ -4,6 +4,7 @@ import Icon from 'src/components/Icon';
 import styled from 'styled-components';
 
 import ModalOverlay from './ModalOverlay';
+import { navigations } from './variables';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,13 @@ const Menu = () => {
 
   useEffect(() => {
     setIsOpen(false);
-    document.title = `${
-      router.components[router.pathname].Component.name
-    } | Mehmet Sağır`;
+    navigations.forEach((navigation) => {
+      navigation.routes.forEach((route) => {
+        if (route.path === router.pathname) {
+          document.title = `${route.label} | Mehmet Sağır`;
+        }
+      });
+    });
   }, [router.pathname]);
 
   return (
