@@ -46,7 +46,9 @@ const Card: React.FC<Props> = ({ title, image, repoUrl, url }) => {
       </Container>
       {projectLinkToReview && (
         <ReviewWrapper onClick={() => setProjectLinkToReview(null)}>
-          <iframe src={projectLinkToReview} />
+          <div className="container">
+            <iframe src={projectLinkToReview} />
+          </div>
         </ReviewWrapper>
       )}
     </>
@@ -81,7 +83,10 @@ const Container = styled.div`
 
 const ReviewWrapper = styled.div`
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 100;
   background: ${({ theme }) => rgba(theme.colors.bg, 0.8)};
   backdrop-filter: blur(1.2px);
@@ -90,14 +95,19 @@ const ReviewWrapper = styled.div`
   justify-content: center;
   cursor: zoom-out;
 
-  iframe {
+  .container {
     width: 80%;
     height: 80%;
-    object-fit: contain;
-    background: #fff;
-    margin: auto;
     border: 2px solid ${({ theme }) => theme.colors.secondary};
     border-radius: 5px;
+    background: #fff;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     @media (max-width: 768px) {
       width: 95%;
     }
