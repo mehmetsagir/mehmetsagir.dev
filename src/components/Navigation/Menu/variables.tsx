@@ -17,6 +17,11 @@ export const navigations: NavigationsProps = [
         label: 'Contact',
         icon: <Icon name="at" />,
       },
+      {
+        path: '/projects',
+        label: 'Projects',
+        icon: <Icon name="projects" />,
+      },
     ],
   },
   {
