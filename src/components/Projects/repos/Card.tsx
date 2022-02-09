@@ -101,6 +101,7 @@ const ReviewWrapper = styled.div`
     border: 2px solid ${({ theme }) => theme.colors.secondary};
     border-radius: 5px;
     background: #fff;
+    overflow: hidden;
 
     iframe {
       width: 100%;
