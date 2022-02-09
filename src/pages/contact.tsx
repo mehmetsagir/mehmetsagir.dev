@@ -1,6 +1,7 @@
+import { NextPage } from 'next';
 import styled from 'styled-components';
 
-const Contact = () => {
+const Contact: NextPage = () => {
   return (
     <Container>
       <h4>To contact me!</h4>
