@@ -10,15 +10,7 @@ const Home: NextPage = () => {
         technologies. <br /> I like to write clean, efficient and maintainable
         code.
         <br />
-        Part time&nbsp;
-        <a
-          href="https://www.youtube.com/channel/UCPoGp98y4dOQsc3OXkndaeQ?sub_confirmation=1"
-          target="_blank"
-          rel="noreferrer"
-        >
-          youtuber
-        </a>
-        &nbsp;and occasional freelancer.
+        And I&apos;m freelancing from time to time.
       </p>
     </Container>
   );
