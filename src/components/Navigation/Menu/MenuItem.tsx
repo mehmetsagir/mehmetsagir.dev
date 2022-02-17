@@ -15,7 +15,7 @@ const MenuItem: React.FC<Props> = ({ data, setIsActiveLink, isActiveLink }) => {
   const { path, label, icon } = data;
 
   return (
-    <Link href={path} {...data}>
+    <Link href={path} passHref {...data}>
       <Container
         onMouseEnter={() => setIsActiveLink(path)}
         className={classNames({
