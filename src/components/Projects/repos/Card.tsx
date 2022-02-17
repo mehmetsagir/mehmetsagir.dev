@@ -62,10 +62,12 @@ const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   img {
     width: 100%;
+    height: 205px;
     object-fit: cover;
     object-position: center;
     border-radius: 2px;
     cursor: zoom-in;
+    transition: 200ms;
   }
   a {
     display: block;
