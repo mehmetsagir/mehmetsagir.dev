@@ -5,8 +5,8 @@ const Contact: NextPage = () => {
   return (
     <Container>
       <h4>To contact me!</h4>
-      <a href="mailto:me&#64;mehmetsagir.com" className="mail">
-        me&#64;mehmetsagir.com
+      <a href="mailto:mehmetsagirdev&#64;gmail.com" className="mail">
+        mehmetsagirdev&#64;gmail.com
       </a>
       <span>or</span>
       <a
