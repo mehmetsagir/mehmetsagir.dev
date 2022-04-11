@@ -5,8 +5,10 @@ import defaultTheme from './theme';
 
 const StyledThemeProvider: React.FC = ({ children }) => (
   <Provider theme={defaultTheme}>
-    <GlobalStyle />
-    {children}
+    <>
+      <GlobalStyle />
+      {children}
+    </>
   </Provider>
 );
 
