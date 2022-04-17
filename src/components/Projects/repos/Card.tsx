@@ -1,118 +1,108 @@
-import { rgba } from 'polished';
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import Icon from '../../Icon';
+
 type Props = {
-  title: string;
-  repoUrl: string;
-  image: string;
-  url: string;
+  repo: {
+    repo: string;
+    link: string;
+    description: string;
+    language: string;
+    languageColor: string;
+    stars: number;
+    forks: number;
+  };
 };
 
-const Card: React.FC<Props> = ({ title, image, repoUrl, url }) => {
-  const [projectLinkToReview, setProjectLinkToReview] = useState<null | string>(
-    null
-  );
-
-  useEffect(() => {
-    const closeModal = (e: any) => {
-      if (projectLinkToReview && e.key === 'Escape') {
-        setProjectLinkToReview(null);
-        document.removeEventListener('keydown', closeModal);
-      }
-    };
-    if (projectLinkToReview) {
-      document.addEventListener('keydown', closeModal);
-    }
-  }, [projectLinkToReview]);
-
-  return (
-    <>
-      <Container>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={`/images/repos/${image}`}
-          alt={title}
-          onClick={() => setProjectLinkToReview(url)}
-          title="Inspect"
+const Card: React.FC<Props> = ({ repo }) => (
+  <Container>
+    <div className="title">
+      <Icon name="github_repo" size="16px" />
+      <a href={repo.link} target="_blank" rel="noreferrer">
+        {repo.repo}
+      </a>
+    </div>
+    <p className="description">{repo.description}</p>
+    <div className="info">
+      <div>
+        <span
+          className="language-color"
+          style={{
+            backgroundColor: repo.languageColor,
+          }}
         />
+        <span>{repo.language}</span>
+      </div>
+      {repo.stars > 0 && (
+        <a href={`${repo.link}/stargazers`} target="_blank" rel="noreferrer">
+          <Icon name="github_stars" size="16px" />
+          <span>{repo.stars}</span>
+        </a>
+      )}
+      {repo.forks > 0 && (
         <a
-          href={`https://github.com/mehmetsagir/${repoUrl}`}
+          href={`${repo.link}/network/members`}
           target="_blank"
           rel="noreferrer"
         >
-          {title}
+          <Icon name="github_forks" size="16px" />
+          <span>{repo.forks}</span>
         </a>
-      </Container>
-      {projectLinkToReview && (
-        <ReviewWrapper onClick={() => setProjectLinkToReview(null)}>
-          <div className="container">
-            <iframe src={projectLinkToReview} />
-          </div>
-        </ReviewWrapper>
       )}
-    </>
-  );
-};
+    </div>
+  </Container>
+);
 
 const Container = styled.div`
-  position: relative;
-  border-radius: 7px;
-  padding: 6px;
-  background: ${({ theme }) => theme.colors.primary};
-  img {
-    width: 100%;
-    height: 205px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 2px;
-    cursor: zoom-in;
-    transition: 200ms;
-  }
-  a {
-    display: block;
-    font-size: 16px;
-    text-align: center;
-    color: ${({ theme }) => theme.colors.textSecondary};
-    margin: 10px 0;
-    font-weight: 400;
-    transition: 200ms;
-    &:hover {
-      color: ${({ theme }) => theme.colors.textPrimary};
-    }
-  }
-`;
-
-const ReviewWrapper = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  background: ${({ theme }) => rgba(theme.colors.bg, 0.8)};
-  backdrop-filter: blur(1.2px);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: zoom-out;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  padding: 16px;
+  border-radius: 6px;
+  line-height: 1.5;
 
-  .container {
-    width: 80%;
-    height: 80%;
-    border: 2px solid ${({ theme }) => theme.colors.secondary};
-    border-radius: 5px;
-    background: #fff;
-    overflow: hidden;
+  .title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    a {
+      font-size: 14px;
+      color: ${({ theme }) => theme.colors.link};
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
+  .description {
+    flex: 1;
+    margin-top: 8px;
+    font-size: 12px;
+    color: ${({ theme }) => theme.colors.textSecondary};
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+    font-size: 12px;
+    div,
+    a {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: ${({ theme }) => theme.colors.textSecondary};
 
-    @media (max-width: 768px) {
-      width: 95%;
+      .language-color {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+    }
+    a:hover {
+      color: ${({ theme }) => theme.colors.link};
     }
   }
 `;

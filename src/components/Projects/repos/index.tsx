@@ -1,23 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Title from 'src/components/Projects/Title';
-import repos from 'src/db/repos.json';
 import styled from 'styled-components';
 
 import Card from './Card';
 
 const Repos = () => {
+  const [repository, setRepository] = useState([]);
+
+  useEffect(() => {
+    fetch('https://gh-pinned-repos.egoist.sh/?username=mehmetsagir').then(
+      (res) => res.json().then((data) => setRepository(data))
+    );
+  }, []);
+
+  if (!repository.length) return null;
   return (
     <>
-      <Title title="Some Repositories" marginTop="40px" />
+      <Title title="Pinned Repositories" marginTop="30px" />
       <Container>
-        {repos.map((repo, index) => (
-          <Card
-            key={index}
-            title={repo.title}
-            image={repo.image}
-            repoUrl={repo.repo_url}
-            url={repo.url}
-          />
+        {repository.map((repo, index) => (
+          <Card key={index} repo={repo} />
         ))}
       </Container>
     </>
