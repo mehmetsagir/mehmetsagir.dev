@@ -13,7 +13,7 @@ const Gists = () => {
 
   useEffect(() => {
     fetch('https://api.github.com/users/mehmetsagir/gists').then((res) =>
-      res.json().then(setGists)
+      res.json().then((data) => setGists(data))
     );
   }, []);
 
