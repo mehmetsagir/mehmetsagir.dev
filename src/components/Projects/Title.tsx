@@ -13,7 +13,7 @@ const Container = styled.h4`
   font-weight: 400;
   font-size: 15px;
   color: ${({ theme }) => theme.colors.textSecondary};
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `;
 
 export default Title;
