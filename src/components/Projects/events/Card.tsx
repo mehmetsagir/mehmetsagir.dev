@@ -1,4 +1,6 @@
 import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
 import { rgba } from 'polished';
 import styled from 'styled-components';
 
@@ -33,7 +35,7 @@ const Card: React.FC<Props> = ({ event }) => {
               </a>
             </div>
             <div className="created_at">
-              {dayjs(commit.created_at).format('HH:mm - DD.MM.YYYY')}
+              {dayjs(commit.created_at).fromNow()}
             </div>
           </div>
         ))}
@@ -78,6 +80,8 @@ const Container = styled.div`
       }
 
       .created_at {
+        flex-shrink: 0;
+        margin-left: 5px;
         font-size: 10px;
         opacity: 0.5;
         color: ${({ theme }) => theme.colors.textSecondary};
