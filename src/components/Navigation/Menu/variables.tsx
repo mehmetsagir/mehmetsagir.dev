@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import Icon from 'src/components/Icon';
 
 import { NavigationsProps } from '/src/types/routes';
@@ -55,6 +56,19 @@ export const navigations: NavigationsProps = [
     ],
   },
 ];
+
+export const useCurrentRoute = () => {
+  const router = useRouter();
+
+  const currentRoute = navigations.map((navigation) => {
+    const { routes } = navigation;
+    return routes.find((route) => route.path === router.pathname);
+  });
+
+  return {
+    ...currentRoute[0],
+  };
+};
 
 export const filteredList = (search: string) => {
   if (!search.length) return navigations;
