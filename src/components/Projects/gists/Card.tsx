@@ -13,7 +13,7 @@ const Card: React.FC<Props> = ({ title, path }) => {
   );
 };
 
-const Container = styled.a`
+export const Container = styled.a`
   display: block;
   padding: 16px 26px;
   border-radius: 5px;

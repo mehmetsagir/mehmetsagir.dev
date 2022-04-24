@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Title from 'src/components/Projects/Title';
 
+import GistsLoader from '../../Loaders/GistsLoader';
 import Card from './Card';
 
 type GistsProps = {
@@ -17,14 +18,16 @@ const Gists = () => {
       .catch(() => {});
   }, []);
 
-  if (!gists.length) return null;
   return (
     <>
       <Title title="Gists" />
-      {gists.length > 0 &&
+      {gists.length > 0 ? (
         gists.map((gist, index) => (
           <Card key={index} title={gist.description} path={gist.html_url} />
-        ))}
+        ))
+      ) : (
+        <GistsLoader />
+      )}
     </>
   );
 };

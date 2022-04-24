@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
+import EventsLoader from '../../Loaders/EventsLoader';
 import Title from '../Title';
 import Card from './Card';
 
@@ -17,10 +18,8 @@ export type EventProps = {
 
 const Events = () => {
   const [events, setEvents] = useState<EventProps[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    setIsLoading(true);
     const response = fetch('https://api.github.com/users/mehmetsagir/events');
 
     if (response) {
@@ -53,24 +52,24 @@ const Events = () => {
           })
           .catch(() => {});
       });
-      setIsLoading(false);
     }
   }, []);
 
-  if (!events.length || isLoading) return null;
   return (
     <>
       <Title title="Last Events" marginTop="30px" />
       <Container>
-        {events.map((event, key) => (
-          <Card key={key} event={event} />
-        ))}
+        {events.length > 0 ? (
+          events.map((event, key) => <Card key={key} event={event} />)
+        ) : (
+          <EventsLoader />
+        )}
       </Container>
     </>
   );
 };
 
-const Container = styled.div`
+export const Container = styled.div`
   background: ${({ theme }) => theme.colors.primary};
   box-shadow: 0px 0px 6px ${({ theme }) => theme.colors.primary};
   padding: 10px 16px;

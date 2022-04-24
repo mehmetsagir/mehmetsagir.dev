@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Title from 'src/components/Projects/Title';
 import styled from 'styled-components';
 
+import ReposLoader from '../../Loaders/ReposLoader';
 import Card from './Card';
 
 const Repos = () => {
@@ -13,20 +14,21 @@ const Repos = () => {
       .catch(() => {});
   }, []);
 
-  if (!repository.length) return null;
   return (
     <>
       <Title title="Pinned Repositories" marginTop="30px" />
       <Container>
-        {repository.map((repo, index) => (
-          <Card key={index} repo={repo} />
-        ))}
+        {repository.length > 0 ? (
+          repository.map((repo, index) => <Card key={index} repo={repo} />)
+        ) : (
+          <ReposLoader />
+        )}
       </Container>
     </>
   );
 };
 
-const Container = styled.div`
+export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;

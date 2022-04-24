@@ -44,7 +44,7 @@ const Card: React.FC<Props> = ({ event }) => {
   );
 };
 
-const Container = styled.div`
+export const Container = styled.div`
   width: 100%;
   .title {
     font-size: 14px;
