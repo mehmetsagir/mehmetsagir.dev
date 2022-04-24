@@ -25,30 +25,33 @@ const Events = () => {
 
     if (response) {
       response.then((res) => {
-        res.json().then((data) => {
-          data.map((event: any) => {
-            const { repo, payload, created_at } = event;
+        res
+          .json()
+          .then((data) => {
+            data.map((event: any) => {
+              const { repo, payload, created_at } = event;
 
-            const { commits } = payload;
-            const commitList: CommitProps[] = [];
+              const { commits } = payload;
+              const commitList: CommitProps[] = [];
 
-            commits.map((commit: any) => {
-              commitList.push({
-                created_at,
-                commit_id: commit.sha,
-                commit_message: commit.message,
+              commits.map((commit: any) => {
+                commitList.push({
+                  created_at,
+                  commit_id: commit.sha,
+                  commit_message: commit.message,
+                });
               });
-            });
 
-            setEvents((prevEvents) => [
-              ...prevEvents,
-              {
-                repo: repo.name,
-                commits: commitList,
-              },
-            ]);
-          });
-        });
+              setEvents((prevEvents) => [
+                ...prevEvents,
+                {
+                  repo: repo.name,
+                  commits: commitList,
+                },
+              ]);
+            });
+          })
+          .catch(() => {});
       });
       setIsLoading(false);
     }

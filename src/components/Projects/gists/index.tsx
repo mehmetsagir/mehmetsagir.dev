@@ -12,9 +12,9 @@ const Gists = () => {
   const [gists, setGists] = useState<GistsProps>([]);
 
   useEffect(() => {
-    fetch('https://api.github.com/users/mehmetsagir/gists').then((res) =>
-      res.json().then((data) => setGists(data))
-    );
+    fetch('https://api.github.com/users/mehmetsagir/gists')
+      .then((res) => res.json().then((data) => setGists(data)))
+      .catch(() => {});
   }, []);
 
   if (!gists.length) return null;
