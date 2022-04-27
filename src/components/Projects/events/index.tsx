@@ -72,18 +72,14 @@ const Events = () => {
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.bg};
-  /* box-shadow: 0px 0px 6px ${({ theme }) => theme.colors.primary}; */
-
   box-shadow: -4px -4px 12px #0f0f0f, 4px 4px 12px #0f0f0f;
-
-  &:hover {
-    box-shadow: inset -4px -4px 12px #0f0f0f, inset 4px 4px 12px #0f0f0f;
-  }
-
   padding: 10px 16px;
   border-radius: 8px;
   max-height: 350px;
   overflow: auto;
+  &:hover {
+    box-shadow: inset -4px -4px 12px #0f0f0f, inset 4px 4px 12px #0f0f0f;
+  }
 `;
 
 export default Events;
