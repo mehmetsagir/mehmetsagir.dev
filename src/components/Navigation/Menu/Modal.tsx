@@ -48,6 +48,10 @@ const Container = styled.div`
       transform: scale(1);
     }
   }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export default Modal;

@@ -80,6 +80,17 @@ export const Container = styled.div`
   &:hover {
     box-shadow: inset -4px -4px 12px #0f0f0f, inset 4px 4px 12px #0f0f0f;
   }
+  ::-webkit-scrollbar {
+    width: 6px;
+    padding: 10px 0;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: none;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme }) => theme.colors.primary};
+    border-radius: 2px;
+  }
 `;
 
 export default Events;
