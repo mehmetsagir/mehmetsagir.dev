@@ -34,11 +34,10 @@ const Container = styled.a`
   align-items: center;
   padding: ${({ theme }) => theme.space[3]};
   border-radius: ${({ theme }) => theme.radii.normal};
-  margin: ${({ theme }) => theme.space[1]} 0};
+  margin: ${({ theme }) => theme.space[1]} 0;
   color: ${({ theme }) => theme.colors.textSecondary};
   transition: 200ms;
 
-  
   &.active {
     background: ${({ theme }) => theme.colors.secondary};
     color: ${({ theme }) => theme.colors.textPrimary};
