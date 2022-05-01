@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styled from 'styled-components';
 
 import Title from '../Projects/Title';
@@ -5,14 +6,24 @@ import Menu from './Menu';
 import { useCurrentRoute } from './Menu/variables';
 
 const Navigation = () => {
-  const { icon, label } = useCurrentRoute();
+  const { icon, label, path, isDetailPage } = useCurrentRoute();
+
+  const content = (
+    <div className="current-route">
+      {icon}
+      <Title title={isDetailPage ? `Return to ${label}` : label} />
+    </div>
+  );
 
   return (
     <Container>
-      <div className="current-route">
-        {icon}
-        <Title title={label} />
-      </div>
+      {isDetailPage ? (
+        <Link href={path} passHref>
+          <a>{content}</a>
+        </Link>
+      ) : (
+        content
+      )}
       <Menu />
     </Container>
   );

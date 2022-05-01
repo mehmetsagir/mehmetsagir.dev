@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import Icon from 'src/components/Icon';
 
-import { NavigationsProps } from '/src/types/routes';
+import { NavigationsProps, RouteProps } from '/src/types/routes';
 
 export const navigations: NavigationsProps = [
   {
@@ -17,6 +17,11 @@ export const navigations: NavigationsProps = [
         path: '/projects',
         label: 'Projects',
         icon: <Icon name="projects" />,
+      },
+      {
+        path: '/snippets',
+        label: 'Snippets',
+        icon: <Icon name="code" />,
       },
       {
         path: '/contact',
@@ -59,14 +64,20 @@ export const navigations: NavigationsProps = [
 
 export const useCurrentRoute = () => {
   const router = useRouter();
+  let currenctRoute: RouteProps = navigations[0].routes[0];
 
-  const currentRoute = navigations.map((navigation) => {
+  navigations.forEach((navigation) => {
     const { routes } = navigation;
-    return routes.find((route) => route.path === router.pathname);
+    routes.forEach((route) => {
+      if (router.asPath.startsWith(route.path)) {
+        currenctRoute = route;
+      }
+    });
   });
 
   return {
-    ...currentRoute[0],
+    ...currenctRoute,
+    isDetailPage: router.pathname !== currenctRoute.path,
   };
 };
 
