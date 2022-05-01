@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "name": "useIsMountFirstTime",
+    "description": "The useIsMountFirstTime hook, which returns 'true' when the page is first rendered, returns 'false' on re-renders.",
+    "category": "React Hook",
+    "path": "snippets/react-hooks/use-is-mount-first-time"
+  }
+]
