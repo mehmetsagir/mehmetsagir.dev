@@ -33,7 +33,7 @@ const Container = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: ${({ theme }) => theme.space[4]};
+  margin-bottom: 32px;
 
   .current-route {
     display: flex;

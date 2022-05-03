@@ -39,12 +39,12 @@ const Container = styled.div`
 
   .title {
     display: block;
-    font-size: ${({ theme }) => theme.fontSizes[0]};
+    font-size: 10px;
     font-weight: 600;
     opacity: 0.6;
     color: #ccc;
-    padding: ${({ theme }) => `0 ${theme.space[3]}`};
-    margin: ${({ theme }) => `${theme.space[3]} 0`};
+    padding: 0 16px;
+    margin: 16px 0;
   }
 `;
 

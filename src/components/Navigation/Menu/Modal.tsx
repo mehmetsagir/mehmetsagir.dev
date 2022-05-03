@@ -32,8 +32,8 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   background: ${({ theme }) => rgba(theme.colors.primary, 0.8)};
-  border-radius: ${({ theme }) => theme.radii.normal};
-  padding: ${({ theme }) => theme.space[3]};
+  border-radius: 8px;
+  padding: 16px;
   overflow-y: auto;
   animation: open 0.3s ease-in-out forwards;
 

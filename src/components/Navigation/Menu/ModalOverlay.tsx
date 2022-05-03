@@ -35,7 +35,7 @@ const Container = styled.div`
   inset: 0;
   background: ${({ theme }) => rgba(theme.colors.bg, 0.8)};
   backdrop-filter: blur(1.2px);
-  padding-top: ${({ theme }) => theme.space[6]};
+  padding-top: 128px;
 `;
 
 export default ModalOverlay;

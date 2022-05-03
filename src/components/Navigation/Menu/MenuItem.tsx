@@ -32,9 +32,9 @@ const MenuItem: React.FC<Props> = ({ data, setIsActiveLink, isActiveLink }) => {
 const Container = styled.a`
   display: flex;
   align-items: center;
-  padding: ${({ theme }) => theme.space[3]};
-  border-radius: ${({ theme }) => theme.radii.normal};
-  margin: ${({ theme }) => theme.space[1]} 0;
+  padding: 16px;
+  border-radius: 8px;
+  margin: 4px 0;
   color: ${({ theme }) => theme.colors.textSecondary};
   transition: 200ms;
 
@@ -46,7 +46,7 @@ const Container = styled.a`
   .icon {
     width: 18px;
     height: 18px;
-    margin-right: ${({ theme }) => theme.space[3]};
+    margin-right: 16px;
   }
 `;
 

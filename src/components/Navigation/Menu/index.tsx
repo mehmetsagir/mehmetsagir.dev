@@ -50,8 +50,8 @@ const Container = styled.button`
   background: none;
   width: 40px;
   height: 40px;
-  padding: ${({ theme }) => `${theme.space[1]} ${theme.space[2]}`};
-  border-radius: ${({ theme }) => theme.radii.small};
+  padding: 4px 8px;
+  border-radius: 4px;
   cursor: pointer;
   transition: 200ms;
 
