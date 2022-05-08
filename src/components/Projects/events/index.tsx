@@ -58,14 +58,16 @@ const Events = () => {
 
   return (
     <>
-      <Title title="Last Events" marginTop="30px" />
-      <Container>
-        {events.length > 0 ? (
-          events.map((event, key) => <Card key={key} event={event} />)
-        ) : (
-          <EventsLoader />
-        )}
-      </Container>
+      <Title title="Last Events" marginTop="30px" />{' '}
+      {events.length > 0 ? (
+        <Container>
+          {events.map((event, key) => (
+            <Card key={key} event={event} />
+          ))}
+        </Container>
+      ) : (
+        <EventsLoader />
+      )}
     </>
   );
 };
