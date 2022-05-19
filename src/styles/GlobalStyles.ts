@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle(({ theme }) => ({
     color: 'inherit',
     textDecoration: 'none',
   },
+  ul: {
+    listStyle: 'none',
+  },
 }));
 
 export default GlobalStyle;
