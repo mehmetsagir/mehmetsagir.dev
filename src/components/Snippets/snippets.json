@@ -4,5 +4,11 @@
     "description": "The useIsMountFirstTime hook, which returns 'true' when the page is first rendered, returns 'false' on re-renders.",
     "category": "React Hook",
     "path": "snippets/react-hooks/use-is-mount-first-time"
+  },
+  {
+    "name": "useViewportWidth",
+    "description": "Dynamically returns the window width.",
+    "category": "React Hook",
+    "path": "snippets/react-hooks/use-viewport-width"
   }
 ]
