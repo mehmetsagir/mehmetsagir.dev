@@ -19,7 +19,7 @@ const Snippets = () => {
         Pieces of code that can offer solutions to some problems or needs.
       </p>
       <ul className="snippet-wrapper">
-        {snippets.map((snippet: SnippetType) => (
+        {[...snippets].reverse().map((snippet: SnippetType) => (
           <li key={snippet.name}>
             <Link href={snippet.path}>
               <a className="snippet">
