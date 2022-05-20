@@ -35,14 +35,14 @@ const MenuGroup: React.FC<Props> = ({ search }) => {
 };
 
 const Container = styled.div`
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid ${({ theme }) => theme.colors.secondary};
 
   .title {
     display: block;
     font-size: 10px;
     font-weight: 600;
     opacity: 0.6;
-    color: #ccc;
+    color: ${({ theme }) => theme.colors.textSecondary};
     padding: 0 16px;
     margin: 16px 0;
   }
