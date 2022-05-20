@@ -2,6 +2,8 @@ import Prism from 'prismjs';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 
+import getColor from '../helpers/getColor';
+
 type Props = {
   language: 'typescript' | 'javascript' | 'css' | 'html' | 'json';
   code: string;
@@ -36,7 +38,10 @@ const Container = styled.div`
   @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
 
   border-radius: 8px;
-  background: ${({ theme }) => theme.colors.primary};
+  background: ${({ theme }) =>
+    getColor(theme.colors.primary).isDark
+      ? theme.colors.primary
+      : theme.colors.text};
   padding: 10px 20px;
   font-family: 'Fira Code', monospace !important;
 

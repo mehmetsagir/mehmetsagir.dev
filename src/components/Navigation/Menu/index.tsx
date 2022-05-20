@@ -56,7 +56,7 @@ const Container = styled.button`
   transition: 200ms;
 
   svg {
-    fill: #fff;
+    fill: ${({ theme }) => theme.colors.text};
   }
 
   &:hover {
