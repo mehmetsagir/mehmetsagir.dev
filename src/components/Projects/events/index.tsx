@@ -1,3 +1,4 @@
+import { darken } from 'polished';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
@@ -74,13 +75,16 @@ const Events = () => {
 
 export const Container = styled.div`
   background: ${({ theme }) => theme.colors.bg};
-  box-shadow: -4px -4px 12px #0f0f0f, 4px 4px 12px #0f0f0f;
+  box-shadow: -4px -4px 12px ${({ theme }) => darken(0.05, theme.colors.primary)},
+    4px 4px 12px ${({ theme }) => darken(0.05, theme.colors.primary)};
   padding: 10px 16px;
   border-radius: 8px;
   max-height: 350px;
   overflow: auto;
   &:hover {
-    box-shadow: inset -4px -4px 12px #0f0f0f, inset 4px 4px 12px #0f0f0f;
+    box-shadow: inset -4px -4px 12px
+        ${({ theme }) => darken(0.05, theme.colors.primary)},
+      inset 4px 4px 12px ${({ theme }) => darken(0.05, theme.colors.primary)};
   }
   ::-webkit-scrollbar {
     width: 6px;
