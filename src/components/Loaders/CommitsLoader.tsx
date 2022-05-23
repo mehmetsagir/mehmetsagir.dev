@@ -2,16 +2,16 @@ import React from 'react';
 import ContentLoader from 'react-content-loader';
 import { useTheme } from 'styled-components';
 
-import { Container as Events } from '../Projects/events';
-import { Container as Event } from '../Projects/events/Card';
+import { Container as Commits } from '../Projects/commits';
+import { Container as Commit } from '../Projects/commits/Card';
 
-const EventsLoader = () => {
+const CommitsLoader = () => {
   const theme = useTheme();
 
   return (
-    <Events>
+    <Commits>
       {Array.from({ length: 8 }).map((_, index) => (
-        <Event key={index}>
+        <Commit key={index}>
           <a className="title">
             <ContentLoader
               speed={2}
@@ -61,10 +61,10 @@ const EventsLoader = () => {
               </div>
             </div>
           </div>
-        </Event>
+        </Commit>
       ))}
-    </Events>
+    </Commits>
   );
 };
 
-export default EventsLoader;
+export default CommitsLoader;

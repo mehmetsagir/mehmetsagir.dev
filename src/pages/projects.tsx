@@ -2,13 +2,13 @@ import { NextPage } from 'next';
 import Gists from 'src/components/Projects/gists';
 import Repos from 'src/components/Projects/repos';
 
-import Events from '../components/Projects/events';
+import Commits from '../components/Projects/commits';
 
 const Projects: NextPage = () => (
   <>
     <Gists />
     <Repos />
-    <Events />
+    <Commits />
   </>
 );
 

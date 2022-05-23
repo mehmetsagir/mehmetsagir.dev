@@ -7,27 +7,27 @@ import styled from 'styled-components';
 import { EventProps } from '.';
 
 type Props = {
-  event: EventProps;
+  data: EventProps;
 };
 
-const Card: React.FC<Props> = ({ event }) => {
+const Card: React.FC<Props> = ({ data }) => {
   return (
     <Container>
       <a
         className="title"
-        href={`https://github.com/${event.repo}`}
+        href={`https://github.com/${data.repo}`}
         target="_blank"
         rel="noreferrer"
       >
-        {event.repo.split('/')[1]}
+        {data.repo.split('/')[1]}
       </a>
       <div className="commits">
-        {event.commits.map((commit, key) => (
+        {data.commits.map((commit, key) => (
           <div className="commit" key={key}>
             <div className="message">
               <small>Commit Message:</small>&nbsp;
               <a
-                href={`https://github.com/${event.repo}/commit/${commit.commit_id}`}
+                href={`https://github.com/${data.repo}/commit/${commit.commit_id}`}
                 target="_blank"
                 rel="noreferrer"
               >

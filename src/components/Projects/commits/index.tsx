@@ -2,7 +2,7 @@ import { darken } from 'polished';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
-import EventsLoader from '../../Loaders/EventsLoader';
+import CommitsLoader from '../../Loaders/CommitsLoader';
 import Title from '../Title';
 import Card from './Card';
 
@@ -17,8 +17,8 @@ export type EventProps = {
   commits: CommitProps[];
 };
 
-const Events = () => {
-  const [events, setEvents] = useState<EventProps[]>([]);
+const Commits = () => {
+  const [commits, setCommits] = useState<EventProps[]>([]);
 
   useEffect(() => {
     const response = fetch('https://api.github.com/users/mehmetsagir/events');
@@ -42,8 +42,8 @@ const Events = () => {
                   });
                 });
 
-                setEvents((prevEvents) => [
-                  ...prevEvents,
+                setCommits((prevCommits) => [
+                  ...prevCommits,
                   {
                     repo: repo.name,
                     commits: commitList,
@@ -60,14 +60,14 @@ const Events = () => {
   return (
     <>
       <Title title="Last Commits" marginTop="30px" />{' '}
-      {events.length > 0 ? (
+      {commits.length > 0 ? (
         <Container>
-          {events.map((event, key) => (
-            <Card key={key} event={event} />
+          {commits.map((commit, key) => (
+            <Card key={key} data={commit} />
           ))}
         </Container>
       ) : (
-        <EventsLoader />
+        <CommitsLoader />
       )}
     </>
   );
@@ -99,4 +99,4 @@ export const Container = styled.div`
   }
 `;
 
-export default Events;
+export default Commits;
