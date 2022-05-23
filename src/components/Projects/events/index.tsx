@@ -59,7 +59,7 @@ const Events = () => {
 
   return (
     <>
-      <Title title="Last Events" marginTop="30px" />{' '}
+      <Title title="Last Commits" marginTop="30px" />{' '}
       {events.length > 0 ? (
         <Container>
           {events.map((event, key) => (
