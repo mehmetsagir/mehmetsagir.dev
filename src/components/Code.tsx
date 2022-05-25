@@ -52,7 +52,6 @@ const Container = styled.div`
   font-family: 'Fira Code', monospace !important;
   position: relative;
   overflow: hidden;
-  user-select: all;
 
   .header {
     display: flex;
