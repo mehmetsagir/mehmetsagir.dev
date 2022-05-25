@@ -1,6 +1,7 @@
 import 'prismjs/themes/prism-okaidia.css';
 
 import Head from 'next/head';
+import { Toaster } from 'react-hot-toast';
 import Layout from 'src/components/Layout';
 
 function MyApp({ Component, pageProps }: any) {
@@ -11,6 +12,15 @@ function MyApp({ Component, pageProps }: any) {
       </Head>
       <Layout>
         <Component {...pageProps} />
+        <Toaster
+          position="bottom-center"
+          reverseOrder={false}
+          toastOptions={{
+            style: {
+              fontSize: 14,
+            },
+          }}
+        />
       </Layout>
     </>
   );

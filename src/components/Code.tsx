@@ -1,5 +1,6 @@
 import Prism from 'prismjs';
 import { useEffect } from 'react';
+import toast from 'react-hot-toast';
 import styled from 'styled-components';
 
 import getColor from '../helpers/getColor';
@@ -13,6 +14,7 @@ type Props = {
 const Code: React.FC<Props> = ({ language, code, style }) => {
   const copyToClipboard = () => {
     navigator.clipboard.writeText(code);
+    toast.success('Copied to clipboard');
   };
 
   useEffect(() => {
