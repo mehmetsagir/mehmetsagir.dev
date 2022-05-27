@@ -24,7 +24,11 @@ const Code: React.FC<Props> = ({ language, code, style }) => {
   }, []);
 
   return (
-    <Container style={style} onClick={copyToClipboard}>
+    <Container
+      style={style}
+      title="Click to Copy Code"
+      onClick={copyToClipboard}
+    >
       <div className="header">
         <div className="dots">
           <span />
@@ -50,8 +54,7 @@ const Container = styled.div`
       : theme.colors.text};
   padding: 10px 20px;
   font-family: 'Fira Code', monospace !important;
-  position: relative;
-  overflow: hidden;
+  cursor: copy;
 
   .header {
     display: flex;
@@ -96,36 +99,6 @@ const Container = styled.div`
     opacity: 0.8;
     code {
       font-family: 'Fira Code', monospace !important;
-    }
-  }
-
-  &::before {
-    content: 'Click to Copy Code';
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 2;
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  &::before {
-    animation: fadeIn 2.4s forwards;
-  }
-
-  @keyframes fadeIn {
-    0%,
-    100% {
-      opacity: 0;
-    }
-    60% {
-      opacity: 1;
     }
   }
 `;
