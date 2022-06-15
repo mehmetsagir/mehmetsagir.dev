@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
-import Header from './Header';
 import MenuGroup from './MenuList';
+import Search from './Search';
 
 const ModalContent = () => {
   const [search, setSearch] = useState('');
 
   return (
     <>
-      <Header setSearch={setSearch} />
+      <Search setSearch={setSearch} />
       <MenuGroup search={search} />
     </>
   );

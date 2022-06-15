@@ -8,7 +8,7 @@ type Props = {
   setSearch: (value: string) => void;
 };
 
-const Header: React.FC<Props> = ({ setSearch }) => {
+const Search: React.FC<Props> = ({ setSearch }) => {
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -63,4 +63,4 @@ const Container = styled.div`
   }
 `;
 
-export default Header;
+export default Search;
