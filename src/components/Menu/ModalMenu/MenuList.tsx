@@ -2,8 +2,8 @@ import router from 'next/router';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { filteredList } from '../variables';
 import MenuItem from './MenuItem';
-import { filteredList } from './variables';
 
 type Props = {
   search: string;

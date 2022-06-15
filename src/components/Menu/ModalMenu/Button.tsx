@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import Icon from 'src/components/Icon';
 import styled from 'styled-components';
 
-import ModalOverlay from './ModalOverlay';
-import { navigations } from './variables';
+import Modal from '../../Modal';
+import { navigations } from '../variables';
+import Content from './ModalContent';
 
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,10 @@ const Menu = () => {
       <Container onClick={() => setIsOpen(true)}>
         <Icon name="burger" size="100%" />
       </Container>
-      {isOpen && <ModalOverlay setShowMenu={setIsOpen} />}
+
+      <Modal show={isOpen} onClose={() => setIsOpen(false)}>
+        <Content />
+      </Modal>
     </>
   );
 };

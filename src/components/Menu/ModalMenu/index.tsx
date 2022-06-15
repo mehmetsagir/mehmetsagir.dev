@@ -1,9 +1,9 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import Title from '../Projects/Title';
-import Menu from './Menu';
-import { useCurrentRoute } from './Menu/variables';
+import Title from '../../Projects/Title';
+import { useCurrentRoute } from '../variables';
+import MenuButton from './Button';
 
 const Navigation = () => {
   const { icon, label, path, isDetailPage } = useCurrentRoute();
@@ -24,7 +24,7 @@ const Navigation = () => {
       ) : (
         content
       )}
-      <Menu />
+      <MenuButton />
     </Container>
   );
 };

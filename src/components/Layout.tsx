@@ -1,12 +1,12 @@
 import StyledThemeProvider from 'src/styles/ThemeProvider';
 import styled from 'styled-components';
 
-import Navigation from './Navigation';
+import Menu from './Menu';
 
 const Layout: React.FC = ({ children }) => (
   <StyledThemeProvider>
     <Container>
-      <Navigation />
+      <Menu />
       {children}
     </Container>
   </StyledThemeProvider>

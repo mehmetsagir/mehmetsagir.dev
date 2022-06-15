@@ -2,7 +2,7 @@ import Router from 'next/router';
 import { useEffect, useRef } from 'react';
 import styled from 'styled-components';
 
-import { filteredList } from './variables';
+import { filteredList } from '../variables';
 
 type Props = {
   setSearch: (value: string) => void;
