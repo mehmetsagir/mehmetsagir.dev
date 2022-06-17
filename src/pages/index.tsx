@@ -11,6 +11,17 @@ const Home: NextPage = () => {
         code.
         <br />
         And I&apos;m freelancing from time to time.
+        <span>
+          P.S. this website is open-source and available on{' '}
+          <a
+            href="https://github.com/mehmetsagir/mehmetsagir.dev"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
+          .
+        </span>
       </p>
     </Container>
   );
@@ -30,7 +41,13 @@ const Container = styled.div`
 
     a {
       padding-bottom: 2px;
+      font-weight: 400;
       text-decoration: underline;
+    }
+
+    span {
+      display: block;
+      margin-top: 16px;
     }
   }
 `;
