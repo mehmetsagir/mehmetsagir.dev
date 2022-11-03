@@ -9,9 +9,9 @@ const Repos = () => {
   const [repository, setRepository] = useState([]);
 
   useEffect(() => {
-    fetch('https://gh-pinned-repos.egoist.sh/?username=mehmetsagir')
+    fetch('https://gh-pinned-repos.egoist.dev/?username=mehmetsagir')
       .then((res) => res.json().then((data) => setRepository(data)))
-      .catch(() => {});
+      .catch(() => { });
   }, []);
 
   return (
