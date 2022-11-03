@@ -11,7 +11,7 @@ const Repos = () => {
   useEffect(() => {
     fetch('https://gh-pinned-repos.egoist.dev/?username=mehmetsagir')
       .then((res) => res.json().then((data) => setRepository(data)))
-      .catch(() => { });
+      .catch(() => {});
   }, []);
 
   return (
