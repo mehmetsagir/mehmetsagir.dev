@@ -5,8 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
+import { useOutsideClick } from '@/hooks/useOutsideClick';
 import DownIcon from '@/public/svgs/down.svg';
-import { useOutsideClick } from '@/utils/hooks/useOutsideClick';
 
 interface INavigation {
   label: string;
@@ -32,11 +32,11 @@ export default function Menu() {
   useOutsideClick(ref, () => setIsOpen(false));
 
   return (
-    <header className="select-none" ref={ref}>
+    <header className="select-none py-4" ref={ref}>
       <nav
         className={cx(
           isOpen ? 'flex' : 'hidden',
-          'flex-col gap-4 sm:gap-6 sm:flex sm:flex-row bg-neutral-900 rounded p-4'
+          'flex-col gap-4 sm:gap-6 sm:flex sm:flex-row'
         )}
       >
         {NAVIGATIONS.map(({ label, href }, index) => {
@@ -60,7 +60,7 @@ export default function Menu() {
       {!isOpen && (
         <button
           type="button"
-          className="flex items-center px-4 py-2 mt-2 bg-neutral-900 rounded sm:hidden"
+          className="flex items-center sm:hidden"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
