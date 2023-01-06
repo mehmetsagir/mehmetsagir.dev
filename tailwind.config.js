@@ -3,13 +3,8 @@ module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      colors: {
-        darkest: '#121212',
-        gray: {
-          DEFAULT: '#cccccc',
-        },
-      },
+      colors: {},
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };
