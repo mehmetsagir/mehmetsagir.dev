@@ -8,5 +8,5 @@ body {
 }
 
 body {
-  @apply bg-darkest text-gray antialiased;
+  @apply bg-neutral-900 text-gray-300/80 antialiased;
 }
