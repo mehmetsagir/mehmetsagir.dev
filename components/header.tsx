@@ -14,7 +14,10 @@ interface INavigation {
   href: string;
 }
 
-const NAVIGATIONS: INavigation[] = [{ label: 'Home', href: '/' }];
+const NAVIGATIONS: INavigation[] = [
+  { label: 'Home', href: '/' },
+  { label: 'Blogs', href: '/blogs' },
+];
 
 export default function Menu() {
   const pathname = usePathname();
@@ -29,7 +32,10 @@ export default function Menu() {
 
   return (
     <header className="select-none flex justify-between items-start sm:items-center">
-      <Link href="/" className="rounded-full bg-orange-500">
+      <Link
+        href="/"
+        className="rounded-full bg-orange-500 hover:scale-105 transition-transform"
+      >
         <Image
           src="/images/memoji.png"
           alt="Mehmet Sağır"
@@ -53,7 +59,7 @@ export default function Menu() {
               href={href}
               className={cx(
                 'transition-colors py-2 sm:py-0 block w-full text-left',
-                isActive ? 'text-white' : 'text-gray/70 hover:text-white/80'
+                isActive ? 'text-white' : 'text-gray-300/60 hover:text-gray-300'
               )}
             >
               {label}
