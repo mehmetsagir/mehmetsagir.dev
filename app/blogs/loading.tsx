@@ -1,5 +1,5 @@
-import BlogsLoader from '@/components/blogs/loader';
+import { BlogsLoader } from '@/components/blogs/loader';
 
-export default function Loading() {
+export default function BlogsLoading() {
   return <BlogsLoader title="Blogs" withInfo />;
 }

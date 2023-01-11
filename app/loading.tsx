@@ -1,5 +1,5 @@
-import About from '@/components/about';
-import BlogsLoader from '@/components/blogs/loader';
+import { About } from '@/components/about';
+import { BlogsLoader } from '@/components/blogs/loader';
 
 export default function HomeLoading() {
   return (

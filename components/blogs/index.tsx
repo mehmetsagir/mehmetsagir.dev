@@ -1,5 +1,5 @@
-import BlogsTemplate, { BlogsProps } from './template';
+import { BlogsProps, BlogsTemplate } from './template';
 
-export default function Blogs(props: BlogsProps) {
+export function Blogs(props: BlogsProps) {
   return <BlogsTemplate {...props} />;
 }

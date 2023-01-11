@@ -1,18 +1,15 @@
 import cx from 'classnames';
 
-import Skeleton from '@/components/skeleton';
+import { Skeleton } from '@/components/skeleton';
 
-import BlogsTemplate from './template';
+import { BlogsTemplate } from './template';
 
 interface BlogsLoaderProps {
   title: string;
   withInfo?: boolean;
 }
 
-export default function BlogsLoader({
-  title,
-  withInfo = false,
-}: BlogsLoaderProps) {
+export function BlogsLoader({ title, withInfo = false }: BlogsLoaderProps) {
   const currentDate = new Date().toISOString();
 
   return (

@@ -1,10 +1,10 @@
 import cx from 'classnames';
 import NextLink from 'next/link';
 
-import Condition from '@/components/condition';
-import Date from '@/components/date';
-import StyledLink from '@/components/styled-link';
-import Title from '@/components/title';
+import { Condition } from '@/components/condition';
+import { Date } from '@/components/date';
+import { StyledLink } from '@/components/styled-link';
+import { Title } from '@/components/title';
 import { BlogTypes } from '@/types';
 
 export interface BlogsProps {
@@ -15,7 +15,7 @@ export interface BlogsProps {
   loaderData?: JSX.Element[];
 }
 
-export default function BlogsTemplate({
+export function BlogsTemplate({
   title,
   data,
   actions,

@@ -6,7 +6,7 @@ interface SkeletonProps {
   count?: number;
 }
 
-export default function Skeleton({
+export function Skeleton({
   className,
   itemsClassName,
   count = 1,

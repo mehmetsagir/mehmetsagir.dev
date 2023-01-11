@@ -1,6 +1,6 @@
 import './globals.css';
 
-import Menu from '@/components/header';
+import { Menu } from '@/components/header';
 
 export default function RootLayout({
   children,

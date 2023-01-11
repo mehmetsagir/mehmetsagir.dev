@@ -1,6 +1,6 @@
-import StyledLink from '@/components/styled-link';
+import { StyledLink } from '@/components/styled-link';
 
-export default function About() {
+export function About() {
   return (
     <>
       <h1 className="text-2xl sm:text-4xl font-semibold">

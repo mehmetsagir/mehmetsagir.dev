@@ -1,4 +1,4 @@
-import Blogs from '@/components/blogs';
+import { Blogs } from '@/components/blogs';
 import { getBlogs } from '@/services/getBlogs';
 
 export default async function BlogsPage() {

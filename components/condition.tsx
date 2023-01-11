@@ -3,7 +3,7 @@ interface IProps {
   children: JSX.Element;
 }
 
-export default function Condition({ condition, children }: IProps) {
+export function Condition({ condition, children }: IProps) {
   if (!condition) return null;
 
   return children;

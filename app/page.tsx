@@ -1,6 +1,6 @@
-import About from '@/components/about';
-import Blogs from '@/components/blogs';
-import StyledLink from '@/components/styled-link';
+import { About } from '@/components/about';
+import { Blogs } from '@/components/blogs';
+import { StyledLink } from '@/components/styled-link';
 import { getBlogs } from '@/services/getBlogs';
 
 export default async function HomePage() {

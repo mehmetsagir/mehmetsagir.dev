@@ -19,7 +19,7 @@ const NAVIGATIONS: INavigation[] = [
   { label: 'Blogs', href: '/blogs' },
 ];
 
-export default function Menu() {
+export function Menu() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef<HTMLElement>(null);

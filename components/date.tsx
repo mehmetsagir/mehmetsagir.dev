@@ -7,7 +7,7 @@ interface IProps {
   date: string;
 }
 
-export default function Date({ date }: IProps) {
+export function Date({ date }: IProps) {
   return (
     <p className="text-xs text-gray-500 font-semibold text-right">
       {dayjs(date).fromNow()}

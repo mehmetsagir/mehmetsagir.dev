@@ -9,7 +9,7 @@ interface StyledLinkProps
   className?: string;
 }
 
-export default function StyledLink({
+export function StyledLink({
   href,
   children,
   className,
