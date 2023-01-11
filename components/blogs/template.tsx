@@ -19,13 +19,13 @@ export function BlogsTemplate({
   title,
   data,
   actions,
-  withInfo = false,
+  withInfo = false
 }: BlogsProps) {
   const Link = withInfo ? NextLink : StyledLink;
 
   return (
     <div className="mt-14">
-      <div className="flex justify-between items-end select-none relative">
+      <div className="relative flex select-none items-end justify-between">
         <Title title={title} />
         {actions}
       </div>
@@ -37,13 +37,13 @@ export function BlogsTemplate({
             target="_blank"
             className={cx({
               'p-4 rounded bg-neutral-800/30 hover:bg-neutral-800/60 transition-colors':
-                withInfo,
+                withInfo
             })}
           >
             <h3 className="sm:text-xl">{blog.title}</h3>
             <Condition condition={withInfo}>
               <>
-                <div className="hidden sm:flex items-center gap-2">
+                <div className="hidden items-center gap-2 sm:flex">
                   <Date date={blog.date} />
                   <div className="text-rose-100/30">·</div>
                   <ul className="flex gap-2">
@@ -51,7 +51,7 @@ export function BlogsTemplate({
                       return (
                         <li
                           key={index}
-                          className="rounded px-2 py-[2px] text-[10px] font-semibold bg-zinc-800"
+                          className="rounded bg-zinc-800 px-2 py-[2px] text-[10px] font-semibold"
                         >
                           {item}
                         </li>
@@ -59,7 +59,7 @@ export function BlogsTemplate({
                     })}
                   </ul>
                 </div>
-                <p className="mt-2 sm:mt-4 text-sm sm:text-base line-clamp-2">
+                <p className="mt-2 text-sm line-clamp-2 sm:mt-4 sm:text-base">
                   {blog.content}
                 </p>
               </>

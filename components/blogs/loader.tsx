@@ -24,7 +24,7 @@ export function BlogsLoader({ title, withInfo = false }: BlogsLoaderProps) {
         link: '#',
         date: currentDate,
         tags: ['Loading...', 'Loading...'],
-        content: <Skeleton count={2} className="flex flex-col gap-2" />,
+        content: <Skeleton count={2} className="flex flex-col gap-2" />
       }))}
       withInfo={withInfo}
     />

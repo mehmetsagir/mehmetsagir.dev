@@ -16,7 +16,7 @@ interface INavigation {
 
 const NAVIGATIONS: INavigation[] = [
   { label: 'Home', href: '/' },
-  { label: 'Blogs', href: '/blogs' },
+  { label: 'Blogs', href: '/blogs' }
 ];
 
 export function Menu() {
@@ -31,10 +31,10 @@ export function Menu() {
   useOutsideClick(ref, () => setIsOpen(false));
 
   return (
-    <header className="select-none flex justify-between items-start sm:items-center">
+    <header className="flex select-none items-start justify-between sm:items-center">
       <Link
         href="/"
-        className="rounded-full bg-orange-500 hover:scale-105 transition-transform"
+        className="rounded-full bg-orange-500 transition-transform hover:scale-105"
       >
         <Image
           src="/images/memoji.png"
@@ -71,12 +71,12 @@ export function Menu() {
       {!isOpen && (
         <button
           type="button"
-          className="flex items-center sm:hidden py-2"
+          className="flex items-center py-2 sm:hidden"
           onClick={() => {
             setIsOpen(!isOpen);
           }}
         >
-          {NAVIGATIONS.find((item) => item.href === pathname)?.label}
+          {NAVIGATIONS.find(item => item.href === pathname)?.label}
           <DownIcon />
         </button>
       )}

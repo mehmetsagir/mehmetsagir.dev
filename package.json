@@ -6,11 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "eslint": "eslint --ext .js,.jsx,.ts,.tsx,.mdx . --fix",
-    "prettier": "prettier --write ."
+    "lint": "next lint",
+    "lint:fix": "next lint --fix .",
+    "format": "npx prettier --write .",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
-    "@tailwindcss/line-clamp": "^0.4.2",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "next": "13.1.1",
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@next/font": "13.1.1",
     "@svgr/webpack": "^6.5.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "@types/node": "18.11.18",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
@@ -32,7 +34,8 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-simple-import-sort": "^8.0.0",
-    "husky": "^8.0.2",
+    "eslint-plugin-tailwindcss": "^3.8.0",
+    "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "postcss": "^8.4.20",
     "prettier": "^2.8.1",

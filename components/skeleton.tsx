@@ -9,7 +9,7 @@ interface SkeletonProps {
 export function Skeleton({
   className,
   itemsClassName,
-  count = 1,
+  count = 1
 }: SkeletonProps) {
   return (
     <div className={twMerge('animate-pulse', className)}>
