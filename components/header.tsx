@@ -16,7 +16,8 @@ interface INavigation {
 
 const NAVIGATIONS: INavigation[] = [
   { label: 'Home', href: '/' },
-  { label: 'Blogs', href: '/blogs' }
+  { label: 'Blogs', href: '/blogs' },
+  { label: 'Projects', href: '/projects' }
 ];
 
 export function Menu() {
