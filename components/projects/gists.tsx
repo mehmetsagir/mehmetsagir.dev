@@ -9,7 +9,7 @@ interface GistsProps {
   }[];
 }
 
-export default function Gists({ gists = [] }: GistsProps) {
+export function Gists({ gists = [] }: GistsProps) {
   return (
     <Section title="Gists" condition={gists.length > 0}>
       <div className="flex flex-col gap-y-2">

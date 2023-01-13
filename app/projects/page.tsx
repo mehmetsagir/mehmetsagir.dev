@@ -1,4 +1,4 @@
-import Gists from '@/components/projects/gists';
+import { Gists } from '@/components/projects/gists';
 import { getGists } from '@/services/getGists';
 
 export default async function ProjectsPage() {
