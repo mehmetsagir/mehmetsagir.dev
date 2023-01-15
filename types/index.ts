@@ -18,3 +18,18 @@ export interface PinnedRepository {
   stars: string;
   forks: string;
 }
+
+export interface EventProps {
+  type: 'PushEvent' | 'ForkEvent' | 'PullRequestEvent' | 'IssuesEvent';
+  created_at: string;
+  repo_name: string;
+  repo_url: string;
+  actor: string;
+  actor_link: string;
+  title: string;
+  link: string;
+  commits?: {
+    message: string;
+    link: string;
+  }[];
+}
