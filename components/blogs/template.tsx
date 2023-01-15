@@ -29,7 +29,7 @@ export function BlogsTemplate({
         <Title title={title} />
         {actions}
       </div>
-      <ul className={cx('mt-6 flex flex-col', withInfo ? 'gap-4' : 'gap-3')}>
+      <div className={cx('mt-6 flex flex-col', withInfo ? 'gap-4' : 'gap-3')}>
         {data.map((blog, index) => (
           <Link
             href={blog.link}
@@ -66,7 +66,7 @@ export function BlogsTemplate({
             </Condition>
           </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
