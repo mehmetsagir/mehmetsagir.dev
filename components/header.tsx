@@ -35,7 +35,7 @@ export function Menu() {
     <header className="flex select-none items-start justify-between sm:items-center">
       <Link
         href="/"
-        className="rounded-full bg-orange-500 transition-transform hover:scale-105"
+        className="rounded-full bg-orange-500 transition-transform hover:scale-110"
       >
         <Image
           src="/images/memoji.png"
@@ -60,7 +60,7 @@ export function Menu() {
               href={href}
               className={cx(
                 'transition-colors py-2 sm:py-0 block w-full text-left',
-                isActive ? 'text-white' : 'text-gray-300/60 hover:text-gray-300'
+                isActive ? 'text-white' : 'text-gray-300/60'
               )}
             >
               {label}
