@@ -1,3 +1,8 @@
+export interface INavigation {
+  label: string;
+  href: string;
+}
+
 export interface BlogTypes {
   title: string | JSX.Element;
   link: string;

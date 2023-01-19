@@ -7,18 +7,8 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 
 import { useOutsideClick } from '@/hooks/useOutsideClick';
+import { NAVIGATIONS } from '@/lib/constants';
 import DownIcon from '@/public/svgs/down.svg';
-
-interface INavigation {
-  label: string;
-  href: string;
-}
-
-const NAVIGATIONS: INavigation[] = [
-  { label: 'Home', href: '/' },
-  { label: 'Blogs', href: '/blogs' },
-  { label: 'Projects', href: '/projects' }
-];
 
 export function Menu() {
   const pathname = usePathname();
