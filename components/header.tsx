@@ -52,7 +52,8 @@ export function Menu() {
         )}
       >
         {NAVIGATIONS.map(({ label, href }, index) => {
-          const isActive = pathname === href;
+          const isActive =
+            href === '/' ? pathname === href : pathname?.includes(href);
 
           return (
             <Link
