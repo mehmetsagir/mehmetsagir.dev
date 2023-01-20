@@ -1,5 +1,6 @@
 import { About } from '@/components/about';
 import { Blogs } from '@/components/blogs';
+import { SocialLinks } from '@/components/social-links';
 import { StyledLink } from '@/components/styled-link';
 import { getBlogs } from '@/services/getBlogs';
 
@@ -9,6 +10,7 @@ export default async function HomePage() {
   return (
     <div className="pt-10">
       <About />
+      <SocialLinks className="mt-4" />
       <Blogs
         title="Latest Blogs"
         data={blogs.slice(0, 4)}
