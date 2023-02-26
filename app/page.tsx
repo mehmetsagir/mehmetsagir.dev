@@ -4,6 +4,8 @@ import { SocialLinks } from '@/components/social-links';
 import { StyledLink } from '@/components/styled-link';
 import { getBlogs } from '@/services/getBlogs';
 
+export const revalidate = 86400; // 60 * 60 * 24
+
 export default async function HomePage() {
   const blogs = await getBlogs();
 

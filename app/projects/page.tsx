@@ -5,6 +5,8 @@ import { getEvents } from '@/services/getEvents';
 import { getGists } from '@/services/getGists';
 import { getPinnedRepositories } from '@/services/getPinnedRepositories';
 
+export const revalidate = 7200; // 60 * 60 * 2
+
 export default async function ProjectsPage() {
   const gists = await getGists();
   const pinnedRepositories = await getPinnedRepositories();
