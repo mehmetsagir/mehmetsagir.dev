@@ -3,7 +3,7 @@ import './globals.css';
 import { Menu } from '@/components/header';
 
 export default function RootLayout({
-  children,
+  children
 }: {
   children: React.ReactNode;
 }) {
@@ -11,9 +11,9 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <div className="max-w-3xl mx-auto py-4 px-6 lg:px-0 relative">
+        <div className="relative mx-auto max-w-3xl py-4 px-6 lg:px-0">
           <svg
-            className="pointer-events-none fixed isolate z-50 opacity-70 mix-blend-soft-light top-0 left-0"
+            className="pointer-events-none fixed top-0 left-0 isolate z-50 opacity-70 mix-blend-soft-light"
             width="100%"
             height="100%"
           >
