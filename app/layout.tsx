@@ -1,5 +1,7 @@
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import { Menu } from '@/components/header';
 
 export default function RootLayout({
@@ -34,6 +36,8 @@ export default function RootLayout({
           <Menu />
           <main className="mt-8">{children}</main>
         </div>
+
+        <Analytics />
       </body>
     </html>
   );
