@@ -1,6 +1,7 @@
 import './globals.css';
 
-import AnalyticsWrapper from '@/app/analytics';
+import { Analytics } from '@vercel/analytics/react';
+
 import { Menu } from '@/components/header';
 
 export default function RootLayout({
@@ -36,7 +37,7 @@ export default function RootLayout({
           <main className="mt-8">{children}</main>
         </div>
 
-        <AnalyticsWrapper />
+        <Analytics />
       </body>
     </html>
   );
