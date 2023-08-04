@@ -8,9 +8,9 @@
     "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix .",
-    "format": "npx prettier --write .",
+    "format": "pnpx prettier --write .",
     "type-check": "tsc --noEmit",
-    "prepare": "npx husky install"
+    "prepare": "pnpx husky install"
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
