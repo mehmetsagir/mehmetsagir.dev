@@ -13,7 +13,7 @@
     "prepare": "pnpx husky install"
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.11",
+    "@vercel/analytics": "^1.0.1",
     "classnames": "^2.3.2",
     "dayjs": "^1.11.7",
     "next": "13.1.1",
