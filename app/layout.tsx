@@ -2,7 +2,7 @@ import './globals.css';
 
 import { Menu } from '@/components/header';
 
-import AnalyticsWrapper from './Analytics';
+import AnalyticsWrapper from './analytics';
 
 export default function RootLayout({
   children
