@@ -13,7 +13,7 @@
     "prepare": "npx husky install"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.1",
+    "@vercel/analytics": "^1.1.2",
     "classnames": "^2.5.1",
     "dayjs": "^1.11.10",
     "next": "14.0.4",

@@ -1,5 +1,7 @@
 import './globals.css';
 
+import { Analytics } from '@vercel/analytics/react';
+
 import { Menu } from '@/components/header';
 
 export default function RootLayout({
@@ -11,9 +13,9 @@ export default function RootLayout({
     <html lang="en">
       <head />
       <body>
-        <div className="relative mx-auto max-w-3xl py-4 px-6 lg:px-0">
+        <div className="relative mx-auto max-w-3xl px-6 py-4 lg:px-0">
           <svg
-            className="pointer-events-none fixed top-0 left-0 isolate z-50 opacity-70 mix-blend-soft-light"
+            className="pointer-events-none fixed left-0 top-0 isolate z-50 opacity-70 mix-blend-soft-light"
             width="100%"
             height="100%"
           >
@@ -34,6 +36,7 @@ export default function RootLayout({
           <Menu />
           <main className="mt-8">{children}</main>
         </div>
+        <Analytics />
       </body>
     </html>
   );
