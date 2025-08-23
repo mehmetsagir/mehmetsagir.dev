@@ -13,11 +13,13 @@ export default async function HomePage() {
     <div className="pt-10">
       <About />
       <SocialLinks className="mt-4" />
-      <Blogs
-        title="Latest Blogs"
-        data={blogs.slice(0, 4)}
-        actions={<StyledLink href="/blogs">See all</StyledLink>}
-      />
+      {blogs && blogs.length > 0 && (
+        <Blogs
+          title="Latest Blogs"
+          data={blogs.slice(0, 4)}
+          actions={<StyledLink href="/blogs">See all</StyledLink>}
+        />
+      )}
     </div>
   );
 }

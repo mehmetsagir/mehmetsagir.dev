@@ -14,9 +14,18 @@ export default async function ProjectsPage() {
 
   return (
     <div className="flex flex-col gap-8">
-      <Gists gists={gists} />
-      <PinnedRepositories repositories={pinnedRepositories} />
-      <Events events={events} />
+      {gists && gists.length > 0 && <Gists gists={gists} />}
+      {pinnedRepositories && pinnedRepositories.length > 0 && (
+        <PinnedRepositories repositories={pinnedRepositories} />
+      )}
+      {events && events.length > 0 && <Events events={events} />}
+      {(!gists || gists.length === 0) &&
+        (!pinnedRepositories || pinnedRepositories.length === 0) &&
+        (!events || events.length === 0) && (
+          <div className="text-center py-10">
+            No project data available at the moment.
+          </div>
+        )}
     </div>
   );
 }
