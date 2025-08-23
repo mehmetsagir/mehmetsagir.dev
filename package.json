@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx . --fix .",
     "format": "npx prettier --write .",
     "type-check": "tsc --noEmit",
-    "prepare": "npx husky install"
+    "prepare": "npx husky install",
+    "build": "next build",
+    "start": "next start -p ${PORT:-3000}"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.2",
