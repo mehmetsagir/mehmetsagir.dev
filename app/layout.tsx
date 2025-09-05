@@ -1,7 +1,5 @@
 import './globals.css';
 
-import { Menu } from '@/components/header';
-
 import AnalyticsWrapper from './analytics';
 
 export default function RootLayout({
@@ -33,7 +31,6 @@ export default function RootLayout({
               filter="url(#pedroduarteisalegend)"
             ></rect>
           </svg>
-          <Menu />
           <main className="mt-8">{children}</main>
         </div>
         <AnalyticsWrapper />
