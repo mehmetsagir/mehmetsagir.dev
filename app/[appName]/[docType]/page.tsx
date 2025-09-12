@@ -1,6 +1,6 @@
 import fs from 'fs';
-import path from 'path';
 import { notFound } from 'next/navigation';
+import path from 'path';
 import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 
@@ -12,8 +12,8 @@ interface PageProps {
 }
 
 const DOC_TYPE_MAPPING = {
-  'permissions': 'PERMISSIONS.md',
-  'privacy-policy': 'PRIVACY_POLICY.md', 
+  permissions: 'PERMISSIONS.md',
+  'privacy-policy': 'PRIVACY_POLICY.md',
   'user-agreement': 'USER_AGREEMENT.md'
 } as const;
 
@@ -22,7 +22,7 @@ async function getDocContent(appName: string, docType: string) {
   if (!fileName) return null;
 
   const docPath = path.join(process.cwd(), 'app-docs', appName, fileName);
-  
+
   try {
     const content = fs.readFileSync(docPath, 'utf8');
     return content;
@@ -33,9 +33,9 @@ async function getDocContent(appName: string, docType: string) {
 
 export default async function DocPage({ params }: PageProps) {
   const { appName, docType } = params;
-  
+
   const content = await getDocContent(appName, docType);
-  
+
   if (!content) {
     notFound();
   }
@@ -46,15 +46,13 @@ export default async function DocPage({ params }: PageProps) {
     .join(' ');
 
   return (
-    <div className="prose prose-gray max-w-none dark:prose-invert">
+    <div className="prose prose-gray dark:prose-invert max-w-none">
       <div className="mb-8">
-        <h1 className="text-3xl font-bold mb-2">{title}</h1>
-        <p className="text-gray-600 dark:text-gray-400 capitalize">{appName}</p>
+        <h1 className="mb-2 text-3xl font-bold">{title}</h1>
+        <p className="capitalize text-gray-600 dark:text-gray-400">{appName}</p>
       </div>
       <div className="markdown-content">
-        <ReactMarkdown remarkPlugins={[remarkBreaks]}>
-          {content}
-        </ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkBreaks]}>{content}</ReactMarkdown>
       </div>
     </div>
   );

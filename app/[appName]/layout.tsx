@@ -41,7 +41,7 @@ export default function AppDocsLayout({ children, params }: LayoutProps) {
                   href={`/${appName}/${doc.slug}`}
                   className={`text-sm transition-colors ${
                     isActive
-                      ? 'text-blue-600 font-medium dark:text-blue-400'
+                      ? 'font-medium text-blue-600 dark:text-blue-400'
                       : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
                   }`}
                 >
