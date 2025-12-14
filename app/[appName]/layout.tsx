@@ -1,13 +1,14 @@
 'use client';
 
+import { use } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 interface LayoutProps {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     appName: string;
-  };
+  }>;
 }
 
 const DOC_TYPES = [
@@ -17,7 +18,7 @@ const DOC_TYPES = [
 ];
 
 export default function AppDocsLayout({ children, params }: LayoutProps) {
-  const { appName } = params;
+  const { appName } = use(params);
   const pathname = usePathname();
 
   return (

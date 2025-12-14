@@ -5,10 +5,10 @@ import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 
 interface PageProps {
-  params: {
+  params: Promise<{
     appName: string;
     docType: string;
-  };
+  }>;
 }
 
 const DOC_TYPE_MAPPING = {
@@ -32,7 +32,7 @@ async function getDocContent(appName: string, docType: string) {
 }
 
 export default async function DocPage({ params }: PageProps) {
-  const { appName, docType } = params;
+  const { appName, docType } = await params;
 
   const content = await getDocContent(appName, docType);
 
