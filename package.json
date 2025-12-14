@@ -13,32 +13,33 @@
     "start": "next start -p ${PORT:-3000}"
   },
   "dependencies": {
-    "@vercel/analytics": "^1.1.2",
+    "@tailwindcss/postcss": "^4.1.18",
+    "@vercel/analytics": "^1.6.1",
     "classnames": "^2.5.1",
     "next": "^16.0.10",
     "react": "^19.2.3",
-    "react-dom": "18.2.0",
+    "react-dom": "19.2.3",
     "react-markdown": "^10.1.0",
     "remark-breaks": "^4.0.0",
-    "tailwind-merge": "^2.2.0",
-    "typescript": "5.3.3"
+    "tailwind-merge": "^3.4.0",
+    "typescript": "5.9.3"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20.10.6",
-    "@types/react": "^18.2.47",
-    "@types/react-dom": "^18.2.18",
-    "autoprefixer": "^10.4.16",
-    "eslint": "^8.56.0",
-    "eslint-config-next": "^14.0.4",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "eslint-plugin-simple-import-sort": "^10.0.0",
-    "eslint-plugin-tailwindcss": "^3.13.1",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "postcss": "^8.4.33",
-    "prettier": "^3.1.1",
-    "tailwindcss": "^3.4.1"
+    "@types/node": "^25.0.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "autoprefixer": "^10.4.22",
+    "eslint": "^9.39.2",
+    "eslint-config-next": "^16.0.10",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-tailwindcss": "^3.18.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "postcss": "^8.5.6",
+    "prettier": "^3.7.4",
+    "tailwindcss": "^4.1.18"
   }
 }
