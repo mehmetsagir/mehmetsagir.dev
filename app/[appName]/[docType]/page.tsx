@@ -14,6 +14,7 @@ interface PageProps {
 const DOC_TYPE_MAPPING = {
   permissions: 'PERMISSIONS.md',
   'privacy-policy': 'PRIVACY_POLICY.md',
+  support: 'SUPPORT.md',
   'user-agreement': 'USER_AGREEMENT.md'
 } as const;
 
