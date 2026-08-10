@@ -4,6 +4,8 @@ import path from 'path';
 import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 
+import { docFileName } from '@/lib/app-docs';
+
 interface PageProps {
   params: Promise<{
     appName: string;
@@ -11,15 +13,8 @@ interface PageProps {
   }>;
 }
 
-const DOC_TYPE_MAPPING = {
-  permissions: 'PERMISSIONS.md',
-  'privacy-policy': 'PRIVACY_POLICY.md',
-  support: 'SUPPORT.md',
-  'user-agreement': 'USER_AGREEMENT.md'
-} as const;
-
 async function getDocContent(appName: string, docType: string) {
-  const fileName = DOC_TYPE_MAPPING[docType as keyof typeof DOC_TYPE_MAPPING];
+  const fileName = docFileName(docType);
   if (!fileName) return null;
 
   const docPath = path.join(process.cwd(), 'app-docs', appName, fileName);

@@ -1,8 +1,8 @@
-'use client';
-
-import { use } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+
+import { availableDocs } from '@/lib/app-docs';
+
+import DocNav from './doc-nav';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,15 +11,13 @@ interface LayoutProps {
   }>;
 }
 
-const DOC_TYPES = [
-  { slug: 'permissions', label: 'Permissions' },
-  { slug: 'privacy-policy', label: 'Privacy Policy' },
-  { slug: 'user-agreement', label: 'User Agreement' }
-];
-
-export default function AppDocsLayout({ children, params }: LayoutProps) {
-  const { appName } = use(params);
-  const pathname = usePathname();
+// A server component so the tabs can be built from the files each app actually has.
+// It used to render a fixed three-tab list for every app, which meant sage showed
+// Permissions and User Agreement (neither exists — both 404 on click) and hid its
+// Support page, the one Apple links to from the App Store.
+export default async function AppDocsLayout({ children, params }: LayoutProps) {
+  const { appName } = await params;
+  const docs = availableDocs(appName);
 
   return (
     <div className="min-h-screen">
@@ -33,24 +31,10 @@ export default function AppDocsLayout({ children, params }: LayoutProps) {
               ← Back to Home
             </Link>
           </div>
-          <div className="flex space-x-6">
-            {DOC_TYPES.map(doc => {
-              const isActive = pathname === `/${appName}/${doc.slug}`;
-              return (
-                <Link
-                  key={doc.slug}
-                  href={`/${appName}/${doc.slug}`}
-                  className={`text-sm transition-colors ${
-                    isActive
-                      ? 'font-medium text-blue-600 dark:text-blue-400'
-                      : 'text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100'
-                  }`}
-                >
-                  {doc.label}
-                </Link>
-              );
-            })}
-          </div>
+          <DocNav
+            appName={appName}
+            docs={docs.map(({ slug, label }) => ({ slug, label }))}
+          />
         </div>
       </nav>
       {children}
