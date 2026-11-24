@@ -22,7 +22,7 @@ Open Settings and tap **Restore Purchases**. Purchases belong to the Apple Accou
 
 ## What does Pro include?
 
-Unlimited photos per showing (the free version shows up to 10), videos and Live Photos, unlimited saved sets, your own end card message and sharing the nosy report. It is a one-time purchase, not a subscription.
+Unlimited photos per showing (the free version shows up to 5), videos and Live Photos, unlimited saved sets, your own end card message and sharing the nosy report. It is a one-time purchase, not a subscription.
 
 ## Requirements
 
